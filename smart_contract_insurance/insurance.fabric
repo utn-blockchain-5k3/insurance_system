@@ -1,0 +1,43 @@
+[
+    {
+        "invoke": "initLedger",
+        "identity": "user1",
+        "args": []
+    },
+    {
+        "invoke": "createInsurance",
+        "args": [
+            "INS-003",
+            "{\"policyNumber\": \"P-003\",\"insuredName\": \"Alice\",\"coverageAmount\": 75000,\"premiumAmount\": 750,\"startDate\": \"2023-01-01\",\"endDate\": \"2024-01-01\"}"
+        ]
+    },
+    {
+        "invoke": "fileClaim",
+        "args": [
+            "INS-003",
+            "{\"claimNumber\": \"C-001\",\"date\": \"2023-06-01\",\"description\": \"Car accident\",\"claimAmount\": 20000}"
+        ]
+    },
+    {
+        "invoke": "evaluateClaim",
+        "args": [
+            "INS-003",
+            "0",
+            "Approved"
+        ]
+    },
+    {
+        "invoke": "payClaim",
+        "args": [
+            "INS-003",
+            "0",
+            "15000"
+        ]
+    },
+    {
+        "query": "getInsurance",
+        "args": [
+            "INS-001"
+        ]
+    }
+]
