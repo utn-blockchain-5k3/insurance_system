@@ -16,7 +16,7 @@ class MyContract extends Contract {
         const idAttrs = clientIdentity.attrs;  // Obtener los atributos del invocador
         
         // Validar si el invocador tiene el rol de admin
-        if (idAttrs.role.includes('admin')) {
+        if (idAttrs["hf.EnrollmentID"].includes("admin")) {
             // Permitir la operación
         } else {
             throw new Error('Access Denied: Only admin can perform this operation');
