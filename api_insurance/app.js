@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 // Usando el router de seguros
 app.use('/insurance', insuranceRoutes);
 
-app.listen(3001, () => {
+app.listen(4000, () => {
     console.log('Server is running on port 4000');
 });
 

@@ -2,6 +2,7 @@
 
 const { Contract } = require('fabric-contract-api');
 
+const insuranceSchema = require('./schemas/insuranceSchema');
 class InsuranceContract extends Contract {
 
     async initLedger(ctx) {
@@ -53,6 +54,13 @@ class InsuranceContract extends Contract {
     async createInsurance(ctx, insuranceId, policyDetails) {
         console.info('============= START : Create Insurance ===========');
 
+        // Validar los datos con el esquema
+        const { error } = insuranceSchema.validate({ insuranceId, policyDetails, status: 'Active', claims: [] });
+        if (error) {
+            throw new Error(`Validation error: ${error.details[0].message}`);
+        }
+
+
         const insurance = {
             policyDetails,
             status: 'Active',
@@ -66,6 +74,13 @@ class InsuranceContract extends Contract {
     // Función para registrar una reclamación
     async fileClaim(ctx, insuranceId, claimDetails) {
         console.info('============= START : File Claim ===========');
+
+        // Validar los datos con el esquema
+        const { error } = insuranceSchema.validate({ insuranceId, policyDetails, status: 'Active', claims: [] });
+        if (error) {
+            throw new Error(`Validation error: ${error.details[0].message}`);
+        }
+
 
         const insuranceAsBytes = await ctx.stub.getState(insuranceId);
         if (!insuranceAsBytes || insuranceAsBytes.length === 0) {
