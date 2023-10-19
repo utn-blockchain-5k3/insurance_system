@@ -35,17 +35,17 @@
     },
     "orderers": {
         "orderer.debugger.com": {
-            "url": "grpc://localhost:5050"
+            "url": "grpc://127.0.0.1:5050"
         }
     },
     "peers": {
         "peer0.org1.debugger.com": {
-            "url": "grpc://localhost:5051"
+            "url": "grpc://127.0.0.1:5051"
         }
     },
     "certificateAuthorities": {
         "ca.org1.debugger.com": {
-            "url": "http://localhost:5054",
+            "url": "http://127.0.0.1:5054",
             "caName": "ca-org1"
         }
     }
