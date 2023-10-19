@@ -26,10 +26,10 @@ En una red blockchain, se busca facilitar y garantizar la transparencia en la ge
 - Actualizar el valor de las propiedades cuando sea necesario.
 - Acceso a historial de evaluaciones realizadas.
 
-### Auditor
+### Auditor (auditor)
 - Acceso de lectura a todas las pólizas, reclamaciones, y evaluaciones en la red para auditoría y cumplimiento.
 
-## Contrato Inteligente (auditor)
+## Contrato Inteligente 
 
 El contrato inteligente gestionará la creación, modificación y consulta de pólizas de seguro, así como la presentación y aprobación de reclamaciones. También gestionará la evaluación y registro del valor de las propiedades. Las funciones del contrato inteligente deberían validar el rol del invocador para asegurar que tienen los permisos adecuados para ejecutar cada operación.
 
